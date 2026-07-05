@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --color-swamp-50: #f2fbf4;
+  --color-swamp-100: #e0f6e5;
+  --color-swamp-200: #c2eccd;
+  --color-swamp-300: #92dca7;
+  --color-swamp-400: #5bc37a;
+  --color-swamp-500: #35a758;
+  --color-swamp-600: #268945;
+  --color-swamp-700: #216c39;
+  --color-swamp-800: #1e5631;
+  --color-swamp-900: #1a472a;
+  --color-swamp-950: #0a2715;
+  --color-night-800: #17211a;
+  --color-night-850: #121a14;
+  --color-night-900: #0d130e;
+  --color-night-950: #080c09;
+}
+
+html, body {
+  background-color: var(--color-night-900);
+  overscroll-behavior-y: none;
+}
+
+/* Dice pop animation */
+@keyframes die-pop {
+  0% { transform: scale(0.4) rotate(-18deg); opacity: 0; }
+  70% { transform: scale(1.12) rotate(4deg); }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+.die-pop { animation: die-pop 0.28s ease-out both; }
+
+/* Stagger dice */
+.die-pop:nth-child(2) { animation-delay: 0.05s; }
+.die-pop:nth-child(3) { animation-delay: 0.1s; }
+.die-pop:nth-child(4) { animation-delay: 0.15s; }
+.die-pop:nth-child(5) { animation-delay: 0.2s; }
+.die-pop:nth-child(6) { animation-delay: 0.25s; }
+.die-pop:nth-child(7) { animation-delay: 0.3s; }
